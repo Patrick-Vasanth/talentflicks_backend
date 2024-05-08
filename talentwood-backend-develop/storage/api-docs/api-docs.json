@@ -1,0 +1,529 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Swagger with Laravel",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/home/allmovielist": {
+            "get": {
+                "tags": [
+                    "Movies"
+                ],
+                "summary": "Get all the movie list",
+                "description": "Return All the movie list",
+                "operationId": "346f0259aff5c8e95a1d7afab777700b",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/home/movielist": {
+            "get": {
+                "tags": [
+                    "Movies"
+                ],
+                "summary": "Get movielist which is active for this week",
+                "description": "Return All the movie list which is active",
+                "operationId": "002f0cc4a2fa55e8d13fd7c6dc3395d5",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/home/banners": {
+            "get": {
+                "tags": [
+                    "Movies"
+                ],
+                "summary": "Get banner list",
+                "description": "Return All the banners list which is active",
+                "operationId": "ff495006192ff01f03300a4a72ddf15b",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/home/movielist/{id}": {
+            "get": {
+                "tags": [
+                    "Movies"
+                ],
+                "summary": "Get movie based on Id",
+                "description": "Return the movie corresponding to the Id",
+                "operationId": "451c49a03f264a39c491d1f643115e5b",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of the movie",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/home/search": {
+            "get": {
+                "tags": [
+                    "Movies"
+                ],
+                "summary": "Search movies by name",
+                "description": "Search for the movie based on the movie name query string",
+                "operationId": "40a39ab80c3f2d9491b55b246ffb7a03",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "search movie name query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/goldenHourMovie": {
+            "get": {
+                "tags": [
+                    "Movies"
+                ],
+                "summary": "Get The Current Golden Hour Movie",
+                "description": "Return the Golden Hour Movie",
+                "operationId": "fb912535270eccd90d31461dd74c6900",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/user/login": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Allow the user to login",
+                "description": "Returns the validated user data along with the api token",
+                "operationId": "1726f27d58c023ccef2df969fa897475",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "User Email Id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "Encoded User Password",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/user/loginwithotp": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Allow the user to login with otp",
+                "description": "Returns the validated user data along with the api token",
+                "operationId": "47c4d1c457b89d1c29442d32a024a42a",
+                "parameters": [
+                    {
+                        "name": "userphone",
+                        "in": "query",
+                        "description": "User mobile number",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "userOtp",
+                        "in": "query",
+                        "description": "OTP",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/user/attributes": {
+            "get": {
+                "tags": [
+                    "userAttributes"
+                ],
+                "summary": "Get all the user attributes details",
+                "description": "Returns tall the user attributes details",
+                "operationId": "fa088d969105884349d00e5087f13b08",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/user/signup": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Store the user information",
+                "description": "Returns the user information",
+                "operationId": "b1c264ecdc1dd03643d4d1cc9e0095ac",
+                "parameters": [
+                    {
+                        "name": "userid",
+                        "in": "query",
+                        "description": "User Id (give 0 when creation and give User id when update)",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "email",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "username",
+                        "in": "query",
+                        "description": "username",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "uniqueusername",
+                        "in": "query",
+                        "description": "uniqueusername",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "locality",
+                        "in": "query",
+                        "description": "locality",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "district",
+                        "in": "query",
+                        "description": "district",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "state",
+                        "in": "query",
+                        "description": "state",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "phone",
+                        "in": "query",
+                        "description": "primaryphone",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "dob",
+                        "in": "query",
+                        "description": "dob",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "gender",
+                        "in": "query",
+                        "description": "gender (Male/Female/Others)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "userroles",
+                        "in": "query",
+                        "description": "userroles ('1,2')",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/user/sendotp": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "send otp",
+                "description": "Returns the validated user data along with the api token",
+                "operationId": "04142069912480f6c4328c0e41f8c547",
+                "parameters": [
+                    {
+                        "name": "userfield",
+                        "in": "query",
+                        "description": "User Email / mobile number",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/user/verifyotp": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "send otp",
+                "description": "Returns the validated user data along with the api token",
+                "operationId": "e222480b5eb1afc97b7097577cd04fc3",
+                "parameters": [
+                    {
+                        "name": "userfield",
+                        "in": "query",
+                        "description": "User Email / mobile number",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "userOtp",
+                        "in": "query",
+                        "description": "OTP",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/user/forgetpassword": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "send otp",
+                "description": "Returns the validated user data along with the api token",
+                "operationId": "bc838b202f448f430c6aa36ddde320a1",
+                "parameters": [
+                    {
+                        "name": "userfield",
+                        "in": "query",
+                        "description": "User Email / mobile number",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "Encoded User Password",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        }
+    }
+}
