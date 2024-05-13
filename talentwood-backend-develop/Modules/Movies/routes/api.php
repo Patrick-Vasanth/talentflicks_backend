@@ -43,7 +43,7 @@ Route::post('/home/movielist', [MoviesController::class, 'uploadmovie'])->withOu
 
 
 //Quizz
-Route::get("/comp-details", [QuizController::class, "compdetails"]);
+Route::get("/comp-details", [QuizController::class, "compdetails"])->withOutMiddleware([usertoken::class, checkuser::class]);
 Route::any('/quizz/test/questions', [QuizController::class, 'testingquizz']);
 Route::post('/quizz/useranswer', [QuizController::class, 'quizAnswer']);
 Route::post('/quizz/test/user', [QuizController::class, 'usertest']);
